@@ -1,18 +1,14 @@
 /**
- * Ensure the player gets to exact winning position 100.
- * - Note in case the player position go above 100,
- * the player stays in the same previous position,
- * till the player gets the exact number that adds upto 100.
- * 
+ * Snake And Ladder Program
+ * Report the number of times the dice was played to win the game and also the position after every die role
  * @author Pratik Chaudhari
  * @since 14/06/2021
  */
-
 package day4;
 
-public class SnakeAndLadderUC5 {
+public class SnakeAndLadderUC6 {
 
-	int initialPosition = 0, position = 0, WinPosition = 100, dieRoll, choice;
+	int initialPosition = 0, position = 0, WinPosition = 100, count = 0, dieRoll, choice;
 	final int noPlay = 0;
 	final int ladder = 1;
 	final int snake = 2;
@@ -34,7 +30,7 @@ public class SnakeAndLadderUC5 {
 				}
 				if (position == WinPosition) {	// only if position = 100, win is declared.
 					System.out.println("Player moves " + dieRoll + ". current position " + position);
-					System.out.println("Player Wins!");
+					System.out.println("Player Wins!"+" It took "+count+" die rolls.");
 					break;
 				}
 				System.out.println("Player moves " + dieRoll + ". current position " + position);
@@ -46,12 +42,13 @@ public class SnakeAndLadderUC5 {
 					position = 0;
 				}
 			}
+			count++;
 		}
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to snake and ladder game simulation.");
-		SnakeAndLadderUC5 Player1 = new SnakeAndLadderUC5();
+		SnakeAndLadderUC6 Player1 = new SnakeAndLadderUC6();
 		Player1.PlayerPosition(0);
 	}
 
