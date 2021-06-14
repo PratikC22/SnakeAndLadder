@@ -8,7 +8,15 @@
 package day4;
 
 public class SnakeAndLadderUC1 {
+	int position = 0;
+	void PlayerPosition(int position) {
+		System.out.println("Player position is "+position);
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to snake and ladder game simulation.");
+		SnakeAndLadderUC1 Player1 = new SnakeAndLadderUC1();
+		Player1.PlayerPosition(0);
 	}
+
 }
